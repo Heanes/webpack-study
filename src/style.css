@@ -1,4 +1,13 @@
+@font-face{
+    font-family: 'hack';
+    src: url('./hack-regular.woff') format('woff'),
+        url('./hack-regular.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
 .hello {
     color: red;
     background: url('./logo-on-white-bg.png');
+    font-family: 'hack', serif;
 }
