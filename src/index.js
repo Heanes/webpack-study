@@ -1,9 +1,8 @@
 import _ from 'lodash';
-import printMe from './print';
 import './style.css';
 
 console.log(process.env.NODE_ENV);
-if(process.env.NODE_ENV !== 'production'){
+if (process.env.NODE_ENV !== 'production') {
     console.log('Looks like we are in development mode');
 }
 
@@ -13,10 +12,15 @@ function component() {
 
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
-    btn.innerHTML = 'Click me and check the console';
-    btn.onclick = printMe;
+    btn.innerHTML = 'Click me and look at the console!';
 
     element.appendChild(btn);
+
+    btn.onclick = e => import(/* webpackChunkName: "print" */ './print').then(module => {
+        var print = module.default;
+
+        print();
+    });
 
     return element;
 }
