@@ -4,31 +4,26 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: {
-        index: './src/index.js',
-        another: './src/another-module.js'
-    },
-    module: {
+    entry: './src/index.js',
+    module:       {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use:  ['style-loader', 'css-loader']
             }
         ]
     },
-    plugins: [
+    plugins:      [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Production'
+            title: 'Caching'
         })
     ],
-    output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+    output:       {
+        filename: '[name].[contenthash].js',
+        path:     path.resolve(__dirname, 'dist')
     },
     optimization: {
-        splitChunks: {
-            chunks: 'all'
-        }
+        runtimeChunk: 'single'
     }
 };
