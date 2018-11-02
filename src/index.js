@@ -1,4 +1,5 @@
 import _ from 'lodash';
+//import Print from './print';
 
 console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV !== 'production') {
@@ -12,6 +13,7 @@ function component() {
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
     btn.innerHTML = 'Click me and look at the console!';
+    //element.onclick = Print.bind(null, 'Hello webpack!');
 
     element.appendChild(btn);
 

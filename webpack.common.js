@@ -17,13 +17,23 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'Caching'
-        })
+        }),
+        new webpack.HashedModuleIdsPlugin()
     ],
     output:       {
         filename: '[name].[contenthash].js',
         path:     path.resolve(__dirname, 'dist')
     },
     optimization: {
-        runtimeChunk: 'single'
+        runtimeChunk: 'single',
+        splitChunks:  {
+            cacheGroups: {
+                vendor: {
+                    test:   /[\\/]node_modules[\\/]/,
+                    name:   'vendors',
+                    chunks: 'all'
+                }
+            }
+        }
     }
 };
