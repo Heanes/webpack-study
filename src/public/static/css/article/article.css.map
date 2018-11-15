@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACI,eAAM;EACF,SAAS,EAAE,IAAI",
+"sources": ["article.scss"],
+"names": [],
+"file": "article.css"
+}
