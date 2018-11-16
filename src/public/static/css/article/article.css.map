@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AACI,eAAM;EACF,SAAS,EAAE,IAAI",
+"mappings": "AAAA,QAAQ;EACJ,MAAM,EAAE,cAAc;EACtB,OAAO,EAAE,IAAI;EACb,eAAM;IACF,SAAS,EAAE,IAAI",
 "sources": ["article.scss"],
 "names": [],
 "file": "article.css"

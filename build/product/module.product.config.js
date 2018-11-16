@@ -20,9 +20,12 @@ modules.rules.push(
     // js 处理
     {
         test: /\.js$/,
-        use: [
-            'babel-loader',
-        ],
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'], // 转换为兼容的es2015 js语法
+            }
+        },
         include: dirVars.srcRootDir,
         exclude: /node_modules|vendor/,
     }

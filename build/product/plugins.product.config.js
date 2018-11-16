@@ -5,6 +5,7 @@ const pluginsConfig = require('../base/plugins.config.js');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 pluginsConfig.push(
+    // 压缩css
     new MiniCssExtractPlugin({
         filename: `${dirVars.staticDirName}/css/[name].[contenthash:8].css`,
     })

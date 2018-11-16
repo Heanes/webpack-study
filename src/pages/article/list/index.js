@@ -1,0 +1,1 @@
+require('@/public/static/css/article/article.css');
