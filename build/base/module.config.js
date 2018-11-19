@@ -11,7 +11,7 @@ module.exports = {
         {
             test: /\.ejs$/,
             include: dirVars.srcRootDir,
-            loader: 'ejs-loader',
+            use: ['ejs-loader'],
         },
         // 图片等资源文件
         {
@@ -19,12 +19,15 @@ module.exports = {
             // 如下配置，将小于8192byte的图片转成base64码
             test: /\.(png|jpg|jpeg|gif)$/,
             include: dirVars.srcRootDir,
-            // loader: 'url-loader?limit=8192&name=./static/img/[hash].[ext]',
-            loader: 'url-loader',
-            options: {
-                limit: 8192,
-                name: './static/img/[hash].[ext]',
-            },
+            use: [
+                {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192,
+                        name: './static/img/[hash].[ext]',
+                    },
+                }
+            ],
         },
     ],
 };
