@@ -6,8 +6,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 let pageEntries = require('./pageEntries.config');
-let entriesJs = require('./entry.config');
-//let entriesHtml = pageEntries.html;
 
 let htmlWebpackPluginArr = [];
 

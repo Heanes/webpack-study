@@ -15,7 +15,7 @@ let optimization = {
             commons: {// ‘src/js’ 下的js文件
                 chunks: "initial",
                 test: /[\\/]src/,//也可以只文件/[\\/]src[\\/]js[\\/].*\.js/,
-                name: "common", //生成文件名，依据output规则
+                name: 'common', //生成文件名，依据output规则
                 minChunks: 2,
                 maxInitialRequests: 5,
                 minSize: 0,
