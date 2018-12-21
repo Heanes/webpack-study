@@ -5,7 +5,7 @@
  */
 const dirVars = require('./dirVars.config.js');
 
-let Glob = require("glob").Glob;
+let Glob = require('glob').Glob;
 
 let globOptions = {
     cwd: dirVars.pagesDir, // 在pages目录里找
@@ -20,7 +20,7 @@ let found = gb.found;
 let foundFiltered = found.filter(item => {
     return !item.match(/^_.*|\/_.*/);
 }).map(item => {
-    return item.replace(/\/[^\/]*\..+/, '');
+    return item.replace(/\/[^/]*\..+/, '');
 });
 
 // console.log('founds', foundFiltered);

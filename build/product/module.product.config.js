@@ -2,7 +2,7 @@ const dirVars = require('../base/dirVars.config.js');
 
 let modules = require('../base/module.config');
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 modules.rules.push(
     // css 处理
