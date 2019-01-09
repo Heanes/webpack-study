@@ -10,15 +10,15 @@ module.exports = {
         // ejs 模版文件
         {
             test: /\.ejs$/,
-            include: dirVars.srcRootDir,
             use: ['ejs-loader'],
+            include: dirVars.srcRootDir,
+            exclude: /node_modules|vendor/
         },
         // 图片等资源文件
         {
             // 图片加载器，雷同file-loader，更适合图片，可以将较小的图片转成base64，减少http请求
             // 如下配置，将小于8192byte的图片转成base64码
             test: /\.(png|jpg|jpeg|gif)$/,
-            include: dirVars.srcRootDir,
             use: [
                 {
                     loader: 'url-loader',
@@ -28,6 +28,8 @@ module.exports = {
                     },
                 }
             ],
+            include: dirVars.srcRootDir,
+            exclude: /node_modules|vendor/
         },
     ],
 };
